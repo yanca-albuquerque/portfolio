@@ -3,42 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yanca Albuquerque</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <title>Yanca Albuquerque | Portfólio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             font-family: 'Cambria', sans-serif;
             background-color: #04133d;
             color: #eeeeee;
-            background-image: url('https://unsplash.com/pt-br/fotografias/foto-do-espaco-sideral-Q1p7bh3SHj8');
+            background-image: url('https://source.unsplash.com/1600x900/?space,galaxy,stars');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
         }
         header {
             text-align: center;
-            padding: 40px;
-            background: rgba(11, 15, 47, 0.8);
+            padding: 50px 20px;
+            background: rgba(11, 15, 47, 0.85);
         }
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin: 0;
-            font-weight: Cambria;
+            font-family: 'Orbitron', sans-serif;
+        }
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        nav {
+            text-align: center;
+            margin-top: 15px;
+        }
+        nav a {
+            color: #00bfff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         section {
             padding: 20px;
             background: rgba(11, 15, 47, 0.9);
             margin: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
         }
         h2 {
             border-bottom: 2px solid #00bfff;
-            padding-bottom: 10px;
-            font-weight: bold;
-        }
-        p, ul li {
-            font-weight: normal;
+            padding-bottom: 8px;
         }
         ul {
             list-style: none;
@@ -46,6 +60,34 @@
         }
         ul li {
             margin-bottom: 10px;
+        }
+        .botao {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #00bfff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .botao:hover {
+            background-color: #008fcc;
+        }
+        .projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #00bfff;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #00bfff;
         }
         footer {
             text-align: center;
@@ -62,53 +104,68 @@
     </style>
 </head>
 <body>
+
     <header>
         <h1>Yanca Albuquerque</h1>
-        <p>📊 Analista de Dados & Contabilista</p>
+        <p>📊 Analista de Dados | Freelancer | Desenvolvedora de Soluções</p>
+        <nav>
+            <a href="#formacao">Formação</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </nav>
     </header>
 
     <section>
-        <h2>Bem-Vindos! 🖖</h2>
-        <p>Portfolio em construção...</p>
-	<p>Minha formação multidisciplinar me proporcionou uma base sólida para entender os aspectos técnicos e comerciais das soluções de dados.</p>
+        <h2>Bem-vindos! 🖖</h2>
+        <p>Sou Analista de Dados com background em Contabilidade e Tecnologia. Desenvolvo dashboards, automações, sistemas em Excel/VBA, Python e soluções de dados.</p>
+        <a class="botao" href="LINK_PARA_SEU_CURRICULO.pdf" target="_blank">📄 Baixar Currículo</a>
+        <a class="botao" href="#servicos">💼 Contrate meus serviços</a>
     </section>
 
-    <section>
-        <h2>Formação Acadêmica 💻</h2>
+    <section id="formacao">
+        <h2>🎓 Formação Acadêmica</h2>
         <ul>
             <li><strong>Pós-graduação em Auditoria Fiscal</strong> - Unimais (2021)</li>
-            <li><strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong> - Universidade Católica de Brasília - UCB (2023)</li>
-            <li><strong>Bacharelado em Ciências Contábeis</strong> - Universidade Católica de Brasília - UCB (2022)</li>
+            <li><strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong> - UCB (2023)</li>
+            <li><strong>Bacharelado em Ciências Contábeis</strong> - UCB (2022)</li>
         </ul>
     </section>
 
-    <section>
-        <h2>Habilidades</h2>
-        <p><strong>Avançados:</strong> Excel+VBA, Power BI</p>
-        <p><strong>Intermediários:</strong> CSS3, Google Analytics, HTML5, Python, MySQL</p>
-        <p><strong>Básicos:</strong> C#, Google Ads, Javascript, Java, Looker Studio</p>
-        <p><strong>IDE's:</strong> VS Code</p>
-	<p><strong>Soft skills:</strong> Comunicação, facilidade com cálculos, pensamento analítico e resolução de problemas.</p>
+    <section id="projetos">
+        <h2>🚀 Projetos em Destaque</h2>
+        <div class="projetos">
+            <div class="card">
+                <h3>Dashboard Comercial</h3>
+                <p>Dashboard desenvolvido em Power BI para análise de vendas e metas.</p>
+                <a class="botao" href="https://github.com/seuusuario/projeto1" target="_blank">Ver Projeto</a>
+            </div>
+            <div class="card">
+                <h3>Automação com Python</h3>
+                <p>Script de automação para coleta de dados da Receita Federal e atualização de planilhas.</p>
+                <a class="botao" href="https://github.com/seuusuario/projeto2" target="_blank">Ver Projeto</a>
+            </div>
+            <div class="card">
+                <h3>Cadastro de Clientes</h3>
+                <p>Ferramenta desenvolvida em Excel + VBA com integração a banco de dados.</p>
+                <a class="botao" href="https://github.com/seuusuario/projeto3" target="_blank">Ver Projeto</a>
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h2>Certificações</h2>
+    <section id="servicos">
+        <h2>💼 Serviços Freelance</h2>
         <ul>
-	    <li><strong>Scrum Foundation Professional Certificate SFPC</strong> - Certiprof</li>
+            <li>✔️ Criação de Dashboards (Power BI, Looker Studio)</li>
+            <li>✔️ Automação de Planilhas (Excel + VBA, Google Sheets + Apps Script)</li>
+            <li>✔️ Desenvolvimento de Scripts em Python (web scraping, automações)</li>
+            <li>✔️ Consultoria em Dados e Processos</li>
+            <li>✔️ Desenvolvimento de sites simples (HTML, CSS, GitHub Pages)</li>
         </ul>
     </section>
 
     <section>
-        <h2>Cursos</h2>
-        <ul>
-            <li><strong>Ciência de Dados com Python</strong> - Data Science Academy</li>
-            <li><strong>Power BI Avançado</strong> - Alura</li>
-            <li><strong>Excel com VBA</strong> - Alura</li>
-        </ul>
-    </section>
-
-    <section>
-    <h2>Idiomas</h2>
+        <h2>🌍 Idiomas</h2>
         <ul>
             <li><strong>Inglês:</strong> Básico a intermediário</li>
             <li><strong>Espanhol:</strong> Básico a intermediário</li>
@@ -116,36 +173,34 @@
     </section>
 
     <section>
-        <h2>Trabalho Voluntário</h2>
-         <p>Bastards Productions | Set/2022 – Atualmente</p>
+        <h2>🤝 Trabalho Voluntário</h2>
+        <p><strong>Bastards Productions</strong> | Set/2022 – Atualmente</p>
         <ul>
-            <li>Gestão de redes sociais e divulgação de eventos.</li>
+            <li>Gestão de redes sociais, divulgação de eventos e apoio na produção.</li>
         </ul>
     </section>
 
-    <section>
-        <h2>🔍 Projetos</h2>
-        <p>Em implementação...</p>
-    </section>
-
     <blockquote>
-        "Inteligência é a capacidade de se adaptar à mudança." - Stephen Hawking
+        "Inteligência é a capacidade de se adaptar à mudança." – Stephen Hawking
     </blockquote>
 
-    <section>
-        <h2>📞 Contatos</h2>
+    <section id="contato">
+        <h2>📞 Contato</h2>
         <div align="center">
-            <a href="https://www.linkedin.com/in/yanca-albuquerque-s9/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-            <a href ="mailto:yanca.analyst@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
+            <a href="https://www.linkedin.com/in/yanca-albuquerque-s9/" target="_blank">
+                <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white">
+            </a>
+            <a href="https://github.com/yanca-albuquerque" target="_blank">
+                <img src="https://img.shields.io/badge/-GitHub-%2312100E?style=for-the-badge&logo=github&logoColor=white">
+            </a>
+            <a href="mailto:yanca.analyst@gmail.com">
+                <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">
+            </a>
         </div>
     </section>
 
     <footer>
         <p>Desenvolvido por Yanca Albuquerque | 2025</p>
-  	<div align="center">
-            <a href="https://www.linkedin.com/in/yanca-albuquerque-s9/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-            <a href ="mailto:yanca.analyst@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
-        </div>
     </footer>
 </body>
 </html>
