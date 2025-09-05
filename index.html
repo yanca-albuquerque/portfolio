@@ -3,103 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yanca Albuquerque</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <title>Yanca Albuquerque | Analista de Dados</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
     <style>
-        body {
+        /* ---- Variáveis de Cor (Tema escuro e neutro) ---- */
+        :root {
+            --background-dark: #111827; /* Cinza-azulado muito escuro */
+            --panel-background: rgba(31, 41, 55, 0.7); /* Painel com transparência sutil */
+            --border-color: rgba(255, 255, 255, 0.15); /* Cor da borda, bem suave */
+            --accent-color: #60a5fa; /* Um azul bem mais claro e suave para links */
+            --text-primary: #f3f4f6;   /* Texto principal (branco suave) */
+            --text-secondary: #9ca3af; /* Texto secundário (cinza claro) */
+            --skill-tag-bg: #374151;   /* Fundo da tag de habilidade */
+            --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* ---- Configurações Globais ---- */
+        * {
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #56689c;
-            color: #eeeeee;
-            background-image: url('https://source.unsplash.com/1600x900/?space,galaxy,stars');
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background-dark);
+            color: var(--text-primary);
+            background-image: url('https://source.unsplash.com/1600x900/?dark,abstract,texture');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            line-height: 1.7;
         }
+
+        /* ---- Header e Navegação ---- */
         header {
             text-align: center;
-            padding: 50px 20px;
-            background: rgba(11, 15, 47, 0.85);
+            padding: 60px 20px;
+            background: linear-gradient(180deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.7));
         }
+
         header h1 {
             font-size: 3rem;
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-        }
-        header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
-        nav {
-            text-align: center;
-            margin-top: 15px;
-        }
-        nav a {
-            color: #d9f2fa;
-            margin: 0 15px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 20px;
-            background: rgba(11, 15, 47, 0.9);
-            margin: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
-        }
-        h2 {
-            border-bottom: 2px solid #00bfff;
-            padding-bottom: 8px;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
+            font-weight: 600;
             margin-bottom: 10px;
         }
+
+        header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin: 0 auto;
+        }
+
+        nav {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+        }
+
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* ---- Estrutura das Seções ---- */
+        main {
+            padding: 1px 0;
+        }
+
+        /* Copie e cole este bloco para substituir o seletor "section" antigo */
+        section {
+            padding: 40px 35px; /* Aumentei um pouco o padding lateral também */
+            margin: 25px auto;
+            max-width: 1100px; /* <<-- VALOR AUMENTADO AQUI -->> */
+            background: var(--panel-background);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border-color); /* Linha sutil */
+        }
+
+        ul {
+            list-style: none; /* Removemos o bullet point padrão para customizar */
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+        /* Adicionando um marcador customizado e sutil */
+        ul li::before {
+            content: '»';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+
+        /* ---- Botões ---- */
         .botao {
             display: inline-block;
-            margin: 10px;
-            padding: 10px 20px;
-            background-color: #00bfff;
-            color: #fff;
-            border-radius: 5px;
+            margin: 10px 10px 10px 0;
+            padding: 12px 25px;
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
             text-decoration: none;
-            transition: background 0.3s;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
         .botao:hover {
-            background-color: #008fcc;
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: #fff;
         }
+        
+        /* ---- Seção de Skills ---- */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background-color: var(--skill-tag-bg);
+            color: var(--text-primary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        /* ---- Seção de Projetos ---- */
         .projetos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
+
         .card {
-            background-color: rgba(255, 255, 255, 0.05);
-            padding: 15px;
+            background-color: rgba(17, 24, 39, 0.8);
+            padding: 20px;
             border-radius: 10px;
-            border: 1px solid #00bfff;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
         .card h3 {
             margin-top: 0;
-            color: #00bfff;
+            color: var(--text-primary);
         }
+
+        /* ---- Rodapé ---- */
         footer {
             text-align: center;
-            padding: 20px;
-            background: rgba(11, 15, 70, 0.8);
+            padding: 25px;
+            background: rgba(17, 24, 39, 0.8);
             font-size: 0.9rem;
+            color: var(--text-secondary);
         }
+      
+        /* ---- Citação (Frase de Efeito) ---- */
         blockquote {
-            font-style: italic;
-            color: #00bfff;
             text-align: center;
-            margin: 20px;
+            max-width: 800px; 
+            margin: 35px auto; /* <<-- ESPAÇAMENTO DIMINUÍDO AQUI (antes era 60px) */
+            padding: 0 20px;
+            background-color: transparent;
+            border: none;
+        }
+
+        blockquote p {
+            display: inline; /* Alterado para permitir que outros elementos fiquem na mesma linha */
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 0; /* Removemos a margem que empurrava o autor para baixo */
+        }
+
+        blockquote cite {
+            display: inline; /* <<-- ALTERADO PARA FICAR NA MESMA LINHA */
+            font-style: normal;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-left: 0.5em; /* Adiciona um pequeno espaço entre a frase e o autor */
         }
     </style>
 </head>
@@ -107,89 +227,109 @@
 
     <header>
         <h1>Yanca Albuquerque</h1>
-        <p>📊 Analista de Dados | Contabilista | Freelancer</p>
+        <p>Analista de Dados | Contabilista | Desenvolvedora Freelancer</p>
         <nav>
+            <a href="#sobre">Sobre</a>
             <a href="#formacao">Formação</a>
+            <a href="#certificacoes">Certificações</a>
+            <a href="#skills">Skills</a>
             <a href="#projetos">Projetos</a>
             <a href="#servicos">Serviços</a>
             <a href="#contato">Contato</a>
         </nav>
     </header>
 
-    <section>
-        <h2>Bem-vindos! 🖖</h2>
-        <p>Sou Analista de Dados com background em Contabilidade e Tecnologia. Desenvolvo dashboards, automações, utilizo Excel/VBA, Python e soluções de dados.</p>
-        <a class="botao" href="LINK_PARA_SEU_CURRICULO.pdf" target="_blank">📄 Baixar Currículo</a>
-        <a class="botao" href="#servicos">💼 Contrate meus serviços</a>
-    </section>
+    <main>
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>Sou Analista de Dados com background em Contabilidade e Tecnologia. Minha especialidade é transformar dados em insights, desenvolvendo dashboards, automações e soluções com Excel/VBA, Python e Power BI.</p>
+            <a class="botao" href="#" target="_blank" rel="noopener noreferrer">Baixar Currículo</a>
+            <a class="botao" href="#servicos">Contratar Serviços</a>
+        </section>
 
-    <section id="formacao">
-        <h2>🎓 Formação Acadêmica</h2>
-        <ul>
-            <li><strong>Extensão em Análise de Dados</strong> - UFMA - Universidade Federal do Maranhão (2025 - atualmente)</li>
-            <li><strong>Pós-graduação em Auditoria Fiscal</strong> - Unimais (2021)</li>
-            <li><strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong> - Universidade Católica de Brasília - UCB (2023)</li>
-            <li><strong>Bacharelado em Ciências Contábeis</strong> - Universidade Católica de Brasília - UCB (2022)</li>
-        </ul>
-    </section>
+        <section id="formacao">
+            <h2>Formação Acadêmica</h2>
+            <ul>
+                <li>Extensão em Análise de Dados - UFMA (Cursando)</li>
+                <li>Pós-graduação em Auditoria Fiscal - Unimais (2021)</li>
+                <li>Tecnólogo em Análise e Desenvolvimento de Sistemas - UCB (2023)</li>
+                <li>Bacharelado em Ciências Contábeis - UCB (2022)</li>
+            </ul>
+        </section>
 
-    <section id="projetos">
-        <h2>🚀 Projetos em Destaque</h2>
-        <div class="projetos">
-            <div class="card">
-                <h3>Dashboard Comercial</h3>
-                <p>Atualizando...</p>
+        <section id="certificacoes">
+            <h2>Certificações</h2>
+            <ul>
+                <li>Scrum - CertiProf</li>
+                <li>White Belt - FM2S</li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Excel</span>
+                <span class="skill-tag">VBA</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Django</span>
+                <span class="skill-tag">HTML & CSS</span>
+                <span class="skill-tag">Web Scraping</span>
+                <span class="skill-tag">Análise de Dados</span>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="servicos">
-        <h2>💼 Serviços Freelance</h2>
-        <ul>
-            <li>✔️ Criação de Dashboards (Power BI, Looker Studio)</li>
-            <li>✔️ Automação de Planilhas (Excel + VBA, Google Sheets + Apps Script)</li>
-            <li>✔️ Desenvolvimento de Scripts em Python (web scraping, automações)</li>
-            <li>✔️ Desenvolvimento de sites simples (HTML, CSS, GitHub Pages, Google Sites)</li>
-        </ul>
-    </section>
+        <section id="projetos">
+            <h2>Projetos</h2>
+            <div class="projetos">
+                <div class="card">
+                    <h3>Dashboard Comercial</h3>
+                    <p>Em construção.</p>
+                </div>
+                 <div class="card">
+                    <h3>Análise</h3>
+                    <p>Em construção.</p>
+                </div>
+                 <div class="card">
+                    <h3>Automação de Relatórios</h3>
+                    <p>Em construção.</p>
+                </div>
+            </div>
+        </section>
 
-    <section>
-        <h2>🌍 Idiomas</h2>
-        <ul>
-            <li><strong>Inglês:</strong> Básico a intermediário</li>
-            <li><strong>Espanhol:</strong> Básico a intermediário</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>🤝 Trabalho Voluntário</h2>
-        <p><strong>Bastards Productions</strong> | Set/2022 – Jul/2025</p>
-        <ul>
-            <li>Gestão de redes sociais, divulgação de eventos e apoio na produção.</li>
-        </ul>
-    </section>
-
+        <section id="servicos">
+            <h2>Serviços Freelance</h2>
+            <ul>
+                <li>Criação de Dashboards (Power BI, Looker Studio)</li>
+                <li>Automação de Planilhas (Excel + VBA, Google Sheets)</li>
+                <li>Análise e Tratamento de Dados com Python (Pandas)</li>
+                <li>Desenvolvimento de sites simples</li>
+            </ul>
+        </section>
+      
     <blockquote>
-        "Inteligência é a capacidade de se adaptar à mudança." – Stephen Hawking
+        <p>"Inteligência é a capacidade de se adaptar à mudança."</p><cite>– Stephen Hawking</cite>
     </blockquote>
-
-    <section id="contato">
-        <h2>📞 Contato</h2>
-        <div align="center">
-            <a href="https://www.linkedin.com/in/yanca-albuquerque-s9/" target="_blank">
-                <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white">
-            </a>
-            <a href="https://github.com/yanca-albuquerque" target="_blank">
-                <img src="https://img.shields.io/badge/-GitHub-%2312100E?style=for-the-badge&logo=github&logoColor=white">
-            </a>
-            <a href="mailto:yanca.analyst@gmail.com">
-                <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">
-            </a>
-        </div>
-    </section>
+      
+        <section id="contato">
+            <h2>Contato</h2>
+            <div align="center">
+                <a href="https://www.linkedin.com/in/yanca-albuquerque-s9/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/yanca-albuquerque" target="_blank" rel="noopener noreferrer">
+                    <img src="https://img.shields.io/badge/-GitHub-%2312100E?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+                </a>
+                <a href="mailto:yanca.analyst@gmail.com">
+                    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
+                </a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>Desenvolvido por Yanca Albuquerque | 2025</p>
+        <p>&copy; 2025 | Desenvolvido por Yanca Albuquerque</p>
     </footer>
 </body>
 </html>
