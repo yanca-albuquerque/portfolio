@@ -11,255 +11,278 @@
     
     <style>
         :root {
-            --background-dark: #111827;
-            --panel-background: rgba(31, 41, 55, 0.7); 
-            --border-color: rgba(255, 255, 255, 0.15); 
+            --background-dark: #151f2e;
+            --panel-background: rgba(23, 31, 44, 0.85); 
+            --border-color: rgba(96, 165, 250, 0.3); 
             --accent-color: #60a5fa; 
+            --space-purple: #9539eb;
             --text-primary: #f3f4f6;  
             --text-secondary: #9ca3af; 
-            --skill-tag-bg: #374151;  
-            --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --skill-tag-bg: rgba(55, 65, 81, 0.5);  
+            --font-body: 'Montserrat', sans-serif;
         }
 
-        /* ---- Configurações Globais ---- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: var(--font-body);
             background-color: var(--background-dark);
             color: var(--text-primary);
-            background-image: url('https://source.unsplash.com/1600x900/?dark,abstract,texture');
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(96, 165, 250, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.05) 0%, transparent 40%),
+                url('https://images.unsplash.com/photo-1464802686167-b939a6910659?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             line-height: 1.7;
         }
 
-        /* ---- Header e Navegação ---- */
         header {
             text-align: center;
-            padding: 60px 20px;
-            background: linear-gradient(180deg, rgba(17, 24, 39, 0.9), rgba(17, 24, 39, 0.7));
+            padding: 40px 20px;
+            background: linear-gradient(180deg, rgba(5, 7, 10, 0.9), transparent);
         }
 
         header h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 600;
             margin-bottom: 10px;
+            background: linear-gradient(to right, var(--accent-color), var(--space-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.5));
         }
 
         header p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            margin: 0 auto;
+            font-size: 1.3rem;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: inline-block;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(96, 165, 250, 0.3);
         }
 
-        nav {
+        nav { 
             margin-top: 30px;
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 10px 20px;
+            gap: 15px 25px;
         }
 
-        nav a {
-            color: var(--text-primary);
+        nav a { 
+            color: #ffffff; 
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding: 5px 10px;
         }
 
         nav a:hover {
             color: var(--accent-color);
+            border-bottom: 1px solid var(--accent-color);
+            text-shadow: 0 0 8px var(--accent-color);
         }
 
-        /* ---- Estrutura das Seções ---- */
         main {
-            padding: 1px 0;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         section {
-            padding: 40px 35px;
+            padding: 45px;
             margin: 25px auto;
-            max-width: 1200px; 
             background: var(--panel-background);
-            border-radius: 12px;
+            border-radius: 20px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
         h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            padding-bottom: 12px;
+            font-size: 2rem;
             margin-bottom: 25px;
-            border-bottom: 1px solid var(--border-color); 
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        ul li {
-            margin-bottom: 12px;
-            padding-left: 20px;
-            position: relative;
-        }
-        ul li::before {
-            content: '»';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-        }
-
-        /* ---- Botões ---- */
-        .botao {
-            display: inline-block;
-            margin: 10px 10px 10px 0;
-            padding: 12px 25px;
-            background-color: transparent;
-            color: var(--text-primary);
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .botao:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-            color: #fff;
-        }
-        
-        /* ---- Seção de Skills ---- */
-        .skills-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .skill-tag {
-            background-color: var(--skill-tag-bg);
+            align-items: center;
+            gap: 15px;
             color: var(--text-primary);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
         }
 
-        /* ---- Seção de Projetos ---- */
-        .projetos {
+        h2::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: linear-gradient(to right, var(--accent-color), transparent);
+        }
+
+        .formacao-grid, .skills-grid, .projetos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
-        .card {
-            background-color: rgba(17, 24, 39, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-color);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            color: var(--text-primary);
-        }
-
-        /* ---- Rodapé ---- */
-        footer {
-            text-align: center;
+        .formacao-bloco, .skill-category, .card {
+            background: rgba(255, 255, 255, 0.03);
             padding: 25px;
-            background: rgba(17, 24, 39, 0.8);
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-      
-        /* ---- Citação ---- */
-        blockquote {
-            text-align: center;
-            max-width: 800px; 
-            margin: 35px auto; 
-            padding: 0 20px;
-            background-color: transparent;
-            border: none;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
         }
 
-        blockquote p {
-            display: inline; 
-            font-size: 1.2rem;
-            font-style: italic;
-            color: var(--text-secondary);
-            margin-bottom: 0;
+        .card:hover, .formacao-bloco:hover, .skill-category:hover {
+            transform: translateY(-8px);
+            border-color: var(--space-purple);
+            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
         }
 
-        blockquote cite {
-            display: inline; 
-            font-style: normal;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-left: 0.5em; 
-        }
-        /* Layout em Grid para as categorias */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        
-        .skill-category h3 {
-            font-size: 1rem;
+        .formacao-bloco h3, .skill-category h3 {
             color: var(--accent-color);
             margin-bottom: 15px;
+            font-size: 1.2rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
+        ul { list-style: none; }
         
+        ul li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        ul li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--space-purple);
+            filter: drop-shadow(0 0 5px var(--space-purple));
+        }
+
+        .botao {
+            display: inline-block;
+            margin: 10px 10px 10px 0;
+            padding: 12px 30px;
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--accent-color);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.4s ease;
+        }
+
+        .botao:hover {
+            background: var(--accent-color);
+            box-shadow: 0 0 20px var(--accent-color);
+            color: #000;
+        }
+
         .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
-        
+
         .skill-tag {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            padding: 6px 12px;
-            border-radius: 6px;
+            background: var(--skill-tag-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 6px 14px;
+            border-radius: 8px;
             font-size: 0.85rem;
+            margin: 3px;
+            display: inline-block;
             transition: all 0.3s ease;
         }
-        
+
         .skill-tag:hover {
             background: var(--accent-color);
-            color: #fff;
+            color: #000;
             border-color: var(--accent-color);
             transform: translateY(-2px);
         }
+
+        blockquote {
+            text-align: center;
+            max-width: 900px;
+            margin: 45px auto;
+            padding: 20px;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            backdrop-filter: none;
+        }
+
+        blockquote p {
+            font-size: 1.5rem;
+            font-style: italic;
+            color: #ffffff;
+            text-shadow: 0 0 12px rgba(237, 237, 238, 0.4);
+        }
+
+        blockquote cite {
+            color: #d8b4fe;
+            font-weight: 600;
+            font-size: 1.15rem;
+            display: block;
+            margin-top: 10px;
+            font-style: normal;
+            text-shadow: 0 0 10px rgba(149, 57, 235, 0.4);
+        }
+
+        .card h3 {
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .card-link {
+            display: inline-block;
+            margin-top: auto;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .card-link:hover {
+            color: var(--space-purple);
+            text-shadow: 0 0 8px var(--space-purple);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: rgba(11, 16, 23, 0.9);
+            border-top: 1px solid var(--border-color);
+            margin-top: 50px;
+        }
+
     </style>
 </head>
 <body>
 
     <header>
         <h1>Yanca Albuquerque</h1>
-        <p>Analista de Dados & BI | Contabilista | Freelancer</p>
+        <p>Dados • BI • IA & Contabilidade</p>
         <nav>
             <a href="#sobre">Sobre</a>
             <a href="#formacao">Formação</a>
@@ -274,33 +297,42 @@
     <main>
         <section id="sobre">
             <h2>Sobre Mim</h2>
-            <p>Sou Analista de Dados com background em Contabilidade e Tecnologia. Minha especialidade é transformar dados em insights, desenvolvendo dashboards, automações e soluções com Excel/VBA, Python e Power BI.</p>
-            <a class="botao" href="#" target="_blank" rel="noopener noreferrer">Baixar Currículo</a>
-            <a class="botao" href="mailto:yanca.analyst@gmail.com?subject=Contato para Orçamento de Serviço">Contratar Serviços</a>
+            <p>Sou Analista de BI/Dados com background em Contabilidade e Tecnologia. Minha especialidade é transformar dados em indicadores estratégicos, desenvolvendo dashboards interativos, automações e soluções inteligentes com Excel/VBA, IA, SQL, Python e Power BI.</p>
+            <div style="margin-top: 25px;">
+                <a class="botao" href="https://www.linkedin.com/in/yanca-albuquerque-s9/" target="_blank" rel="noopener noreferrer">Currículo</a>
+                <a class="botao" href="mailto:yanca.analyst@gmail.com?subject=Contato%20para%20Contratar%20Serviços">Contratar Serviços</a>
+            </div>
         </section>
 
         <section id="formacao">
             <h2>Formação Acadêmica</h2>
-            <ul>
-                <li>TI</li>
-                <li>Engenharia de Software - UCB (em andamento)</li>
-                <li>Extensão em Análise de Dados - UFMA (2025)</li>
-                <li>Tecnólogo em Análise e Desenvolvimento de Sistemas - UCB (2023)</li>
-            </ul>
-            <ul>
-                <li>Contabilidade</li>
-                <li>Pós-graduação em Auditoria Fiscal - Unimais (2021)</li>
-                <li>Bacharelado em Ciências Contábeis - UCB (2022)</li>
-            </ul>
+            <div class="formacao-grid">
+                <div class="formacao-bloco">
+                    <h3>Tecnologia</h3>
+                    <ul>
+                        <li><strong>Machine Learning</strong><br><small>Pós Graduação - IESB (Em andamento)</small></li>
+                        <li><strong>Engenharia de Software</strong><br><small>Bacharelado - UCB (Em andamento)</small></li>
+                        <li><strong>Análise de Dados</strong><br><small>Extensão - UFMA (2025)</small></li>
+                        <li><strong>Análise e Desenv. de Sistemas</strong><br><small>Tecnólogo - UCB (2023)</small></li>
+                    </ul>
+                </div>
+                <div class="formacao-bloco">
+                    <h3>Contabilidade</h3>
+                    <ul>
+                        <li><strong>Auditoria Fiscal</strong><br><small>Pós-graduação - UNIMAIS (2021)</small></li>
+                        <li><strong>Ciências Contábeis</strong><br><small>Bacharelado - UCB (2022)</small></li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section id="certificacoes">
             <h2>Certificações</h2>
-            <ul>
-                <li>Scrum - CertiProf</li>
-                <li>Yellow Belt - FM2S</li>
-                <li>White Belt - FM2S</li>
-            </ul>
+            <div class="skills-container">
+                <span class="skill-tag">Scrum - CertiProf</span>
+                <span class="skill-tag">Yellow Belt - FM2S</span>
+                <span class="skill-tag">White Belt - FM2S</span>
+            </div>
         </section>
 
         <section id="skills">
@@ -309,58 +341,91 @@
                 <div class="skill-category">
                     <h3>Data Science & IA</h3>
                     <div class="skills-container">
-                        <span class="skill-tag">Python (Pandas/Numpy)</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">Scikit-Learn</span>
                         <span class="skill-tag">Inteligência Artificial</span>
                         <span class="skill-tag">Machine Learning</span>
                         <span class="skill-tag">Web Scraping</span>
+                        <span class="skill-tag">Tratamento de Dados</span>
+                        <span class="skill-tag">Gemini</span>
+                        <span class="skill-tag">Claude</span>
+                        <span class="skill-tag">ChatGPT</span>
                     </div>
                 </div>
-        
+
                 <div class="skill-category">
-                    <h3>BI & Analytics</h3>
+                    <h3>BI & Automação</h3>
                     <div class="skills-container">
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">PostgreSQL</span>
                         <span class="skill-tag">Power BI</span>
                         <span class="skill-tag">DAX & R</span>
-                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Power Apps</span>
+                        <span class="skill-tag">Power Automate</span>
+                        <span class="skill-tag">Excel Avançado</span>
+                        <span class="skill-tag">VBA / Macros</span>
                         <span class="skill-tag">Looker Studio</span>
                     </div>
                 </div>
-        
+
                 <div class="skill-category">
                     <h3>Desenvolvimento</h3>
                     <div class="skills-container">
                         <span class="skill-tag">Django</span>
                         <span class="skill-tag">HTML5 & CSS3</span>
                         <span class="skill-tag">Git / GitHub</span>
-                        <span class="skill-tag">Power Automate</span>
-                    </div>
-                </div>
-        
-                <div class="skill-category">
-                    <h3>Business & Finance</h3>
-                    <div class="skills-container">
-                        <span class="skill-tag">Excel Avançado</span>
-                        <span class="skill-tag">VBA / Macros</span>
-                        <span class="skill-tag">Auditoria Fiscal</span>
+                        <span class="skill-tag">Javascript básico</span>
+                        <span class="skill-tag">Java básico</span>
+                        <span class="skill-tag">C# básico</span>
                     </div>
                 </div>
             </div>
-        </section></section>
+        </section>
 
         <section id="projetos">
             <h2>Projetos</h2>
             <div class="projetos">
                 <div class="card">
-                    <h3>Dashboard Comercial</h3>
-                    <p>Em construção.</p>
+                    <div>
+                        <h3>AgenteDIO: Automação com Trello e Gemini</h3>
+                        <p>Agente de IA desenvolvido para gerenciar o fluxo de tarefas no Trello através de linguagem natural, utilizando o Gemini Flash para interpretar comandos e interagir com as APIs do Trello.</p>
+                    </div>
+                    <a href="https://github.com/yanca-albuquerque/agentedio" class="card-link" target="_blank" rel="noopener noreferrer">Ver Repositório ↗</a>
                 </div>
-                 <div class="card">
-                    <h3>Análise</h3>
-                    <p>Em construção.</p>
+                <div class="card">
+                    <div>
+                        <h3>Automação de Coleta de E-mails</h3>
+                        <p>Fluxo no Power Automate para monitoramento de caixas de e-mail, integração direta com Microsoft Graph API, paginação de dados e enriquecimento com IA (AI Builder/GPT) salvando no SharePoint.</p>
+                    </div>
+                    <a href="https://github.com/yanca-albuquerque/Powerautomate-obter-emails" class="card-link" target="_blank" rel="noopener noreferrer">Ver Repositório ↗</a>
                 </div>
-                 <div class="card">
-                    <h3>Automação de Relatórios</h3>
-                    <p>Em construção.</p>
+                <div class="card">
+                    <div>
+                        <h3>Fórmulas Power BI</h3>
+                        <p>Repositório focado em fórmulas DAX e soluções práticas para otimizar o suporte e o desenvolvimento de relatórios e dashboards no dia a dia com Power BI.</p>
+                    </div>
+                    <a href="https://github.com/yanca-albuquerque/formulas-pbi" class="card-link" target="_blank" rel="noopener noreferrer">Ver Repositório ↗</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Tela Consulta BI (Power Apps & Power BI)</h3>
+                        <p>Aplicativo em Power Apps integrado com Office 365 para centralizar o acesso aos relatórios corporativos, aplicando regras de segurança por nível de acesso e filtragem por departamento.</p>
+                    </div>
+                    <a href="https://github.com/yanca-albuquerque/power_apps_tela_bi" class="card-link" target="_blank" rel="noopener noreferrer">Ver Repositório ↗</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Tela de E-mails (Power Apps)</h3>
+                        <p>Aplicativo desenvolvido no Microsoft Power Apps para preencher campos não encontrados de e-mails extraídos via Power Automate, salvando no SharePoint e Excel com busca rápida integrada.</p>
+                    </div>
+                    <a href="https://github.com/yanca-albuquerque/power_apps_email" class="card-link" target="_blank" rel="noopener noreferrer">Ver Repositório ↗</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Web Scraping – Consulta CNPJ</h3>
+                        <p>Script em Python integrado com Excel para consulta automatizada de dados de CNPJ via API, ideal para estruturação de cadastros de clientes e fornecedores.</p>
+                    </div>
+                    <a href="https://github.com/yanca-albuquerque/Script_CNPJ" class="card-link" target="_blank" rel="noopener noreferrer">Ver Repositório ↗</a>
                 </div>
             </div>
         </section>
@@ -368,20 +433,21 @@
         <section id="servicos">
             <h2>Serviços Freelance</h2>
             <ul>
-                <li>Criação de Dashboards (Power BI, Looker Studio, entre outros)</li>
-                <li>Automação de Planilhas (Excel + VBA, Google Sheets)</li>
-                <li>Análise e Tratamento de Dados com Python (Pandas)</li>
-                <li>Desenvolvimento de sites simples</li>
+                <li>Criação de Dashboards Personalizados (Power BI, Looker Studio)</li>
+                <li>Automação Avançada de Planilhas (Excel + VBA, Google Sheets)</li>
+                <li>Análise, Limpeza e Tratamento de Dados com Python, SQL</li>
+                <li>Desenvolvimento de Aplicações e Sites Sob Medida</li>
             </ul>
         </section>
-      
-    <blockquote>
-        <p>"Inteligência é a capacidade de se adaptar à mudança."</p><cite>– Stephen Hawking</cite>
-    </blockquote>
-      
-        <section id="contato">
-            <h2>Contato</h2>
-            <div align="center">
+
+        <blockquote>
+            <p>"Inteligência é a capacidade de se adaptar à mudança."</p>
+            <cite>– Stephen Hawking</cite>
+        </blockquote>
+
+        <section id="contato" style="text-align: center;">
+            <h2>Contatos</h2>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px;">
                 <a href="https://www.linkedin.com/in/yanca-albuquerque-s9/" target="_blank" rel="noopener noreferrer">
                     <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
                 </a>
@@ -396,7 +462,7 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 | Desenvolvido por Yanca Albuquerque</p>
+        <p>&copy; 2025 | Yanca Albuquerque | <span style="color: var(--accent-color);">Explorando o universo dos dados</span></p>
     </footer>
 </body>
 </html>
